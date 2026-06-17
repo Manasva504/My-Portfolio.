@@ -6,7 +6,7 @@
 html {
   height: 100%;
   background-color: #fdfdfd;
-  background-image:;
+  scroll-behavior: smooth;
 }
 main {
   flex: 1;
@@ -67,6 +67,9 @@ h3 {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: linear-gradient(to right, #021024, #052659);
   display: flex;
   justify-content: space-between;
