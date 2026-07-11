@@ -3,10 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Manasva Dhaka, a B.Tech IT undergraduate building full-stack MERN and AI-powered projects."
+    />
+
+    <!-- TODO: replace og:image with a real screenshot of the site (must stay an absolute URL) -->
+    <meta property="og:title" content="Manasva's Portfolio" />
+    <meta
+      property="og:description"
+      content="Portfolio of Manasva Dhaka, a B.Tech IT undergraduate building full-stack MERN and AI-powered projects."
+    />
+    <meta
+      property="og:image"
+      content="https://manasva504.github.io/My-Portfolio./manasva1.jpeg"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- TODO: Swap this placeholder favicon for a real one, e.g. <link rel="icon" type="image/png" href="favicon.png" /> -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23052659'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Poppins,sans-serif' fill='%234d8cff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E"
+    />
+
     <title>Manasva's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +51,7 @@
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -40,7 +62,13 @@
           <div>
             <h2>Hi, I am</h2>
             <h1>Manasva</h1>
-            <h3>Computer Science Undergraduate</h3>
+            <h3>Software Engineer | B.Tech IT Student</h3>
+
+            <!-- TODO: update the season/year every term, e.g. "Summer 2027" or "Full-time 2027" -->
+            <div class="availability-badge">
+              <span class="status-dot" aria-hidden="true"></span>
+              Open to SDE Internship opportunities — Summer 2027
+            </div>
 
             <p>
               Passionate about Web Development and problem solving.
@@ -59,92 +87,344 @@
             </div>
 
             <div class="socials">
-              <a href="" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
+              <!-- TODO: add your real LinkedIn profile URL -->
+              <a href="#" target="_blank" aria-label="LinkedIn profile">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
               </a>
 
-              <a href="https://github.com/Manasva504" target="_blank">
-                <i class="fa-brands fa-github"></i>
+              <a
+                href="https://github.com/Manasva504"
+                target="_blank"
+                aria-label="GitHub profile"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
               </a>
 
-              <a href="mailto:manasva541@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:manasva541@gmail.com" aria-label="Send email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </a>
+
+              <!-- TODO: add your real LeetCode profile URL (Font Awesome has no LeetCode brand icon, so this uses a generic code icon) -->
+              <a href="#" target="_blank" aria-label="LeetCode profile">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
               </a>
             </div>
           </div>
 
           <a>
+            <!-- manasva1.jpeg is ~80KB — reasonable, but converting to WebP would shrink it further -->
             <img
               src="./manasva1.jpeg"
-              alt="about me"
-              title="About me "
+              alt="Photo of Manasva"
+              title="Manasva"
               class="uparwalaimg"
             />
           </a>
         </div>
 
-        <div id="about" class="aboutme">
+        <div id="about" class="aboutme reveal">
+          <!-- about.png is ~180KB — consider compressing or converting to WebP for faster load -->
           <img
             src="./about.png"
-            alt="about me"
+            alt="Illustration of a developer coding at a laptop, surrounded by icons for HTML, CSS, JavaScript, SQL, PHP, and XML"
             title="About me "
             class="aboutmeimg"
+            loading="lazy"
           />
 
           <div class="about-text">
-            <h2>About Me</h2>
+            <h2 class="section-title">About Me</h2>
 
             <p>
-              Aspiring Software Engineer and Computer Science undergraduate with
-              a foundational understanding of frontend development and
-              programming concepts. Currently learning Data Structures &
-              Algorithms, modern web technologies, and software development
-              fundamentals while strengthening problem-solving skills. A quick
-              learner with a strong interest in creating real-world applications
-              and continuously improving technical knowledge. I have knowledge
-              of Java and C, along with SQL for data analysis.
+              I'm a B.Tech IT undergraduate at Manipal Institute of Technology
+              and a Software Development Intern at Adnate IT Solutions, where
+              I'm building a full-stack Student Management System on the MERN
+              stack — JWT authentication with role-based access control,
+              real-time features with Socket.IO, and MongoDB aggregation
+              dashboards. I also built an AI-powered customer support chat
+              widget (FastAPI + Gemini API) that answers strictly from a
+              business's own FAQ content, and I practice data structures &amp;
+              algorithms daily on top of a strong Java, C, and Python
+              foundation.
+            </p>
+
+            <!-- TODO: fill in what you're actually building/learning right now and keep this fresh — recruiters notice stale dates -->
+            <p class="current-focus">
+              <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+              Currently building: [PROJECT] &nbsp;|&nbsp; Learning: [TOPIC]
             </p>
           </div>
         </div>
 
-        <section id="skills" class="skills-section">
-          <h2>SKILLS</h2>
+        <section id="skills" class="skills-section reveal">
+          <h2 class="section-title">SKILLS</h2>
 
-          <div class="skills-container">
-            <div class="skill-card">
-              <img src="c.png" alt="C" />
-              <p>C</p>
+          <!-- These four groups mirror the SKILLS section of resume.pdf exactly.
+               Keep them in sync: whenever the resume changes, update this list
+               (and vice versa). -->
+          <div class="skills-group">
+            <span class="skills-group-label">Languages</span>
+            <div class="skills-container">
+              <div class="skill-card">
+                <img src="java.png" alt="Java" loading="lazy" />
+                <p>Java</p>
+              </div>
+
+              <div class="skill-card">
+                <img src="c.png" alt="C" loading="lazy" />
+                <p>C</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-brands fa-python skill-icon" aria-hidden="true"></i>
+                <p>Python</p>
+              </div>
+
+              <div class="skill-card">
+                <img src="javascript.png" alt="JavaScript" loading="lazy" />
+                <p>JavaScript</p>
+              </div>
             </div>
+          </div>
 
-            <div class="skill-card">
-              <img src="java.png" alt="Java" />
-              <p>Java</p>
+          <div class="skills-group">
+            <span class="skills-group-label">Web &amp; Backend</span>
+            <div class="skills-container">
+              <div class="skill-card">
+                <i class="fa-brands fa-react skill-icon" aria-hidden="true"></i>
+                <p>React.js</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-atom skill-icon" aria-hidden="true"></i>
+                <p>Redux Toolkit</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-brands fa-node-js skill-icon" aria-hidden="true"></i>
+                <p>Node.js</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-server skill-icon" aria-hidden="true"></i>
+                <p>Express.js</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-network-wired skill-icon" aria-hidden="true"></i>
+                <p>REST API Design</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-user-shield skill-icon" aria-hidden="true"></i>
+                <p>JWT Auth &amp; RBAC</p>
+              </div>
+
+              <div class="skill-card">
+                <i class="fa-solid fa-bolt skill-icon" aria-hidden="true"></i>
+                <p>Socket.IO</p>
+              </div>
             </div>
+          </div>
 
-            <div class="skill-card">
-              <img src="sql.png" alt="SQL" />
-              <p>SQL</p>
+          <div class="skills-group">
+            <span class="skills-group-label">Databases</span>
+            <div class="skills-container">
+              <div class="skill-card">
+                <i class="fa-solid fa-leaf skill-icon" aria-hidden="true"></i>
+                <p>MongoDB</p>
+              </div>
+
+              <div class="skill-card">
+                <img src="sql.png" alt="SQL" loading="lazy" />
+                <p>SQL</p>
+              </div>
             </div>
+          </div>
 
-            <div class="skill-card">
-              <img src="html.png" alt="HTML" />
-              <p>HTML</p>
-            </div>
+          <div class="skills-group">
+            <span class="skills-group-label">Tools &amp; Testing</span>
+            <div class="skills-container">
+              <div class="skill-card">
+                <i class="fa-brands fa-git-alt skill-icon" aria-hidden="true"></i>
+                <p>Git &amp; GitHub</p>
+              </div>
 
-            <div class="skill-card">
-              <img src="css.png" alt="CSS" />
-              <p>CSS</p>
-            </div>
+              <div class="skill-card">
+                <i class="fa-solid fa-vial skill-icon" aria-hidden="true"></i>
+                <p>Jest</p>
+              </div>
 
-            <div class="skill-card">
-              <img src="javascript.png" alt="CSS" />
-              <p>Javascript</p>
+              <div class="skill-card">
+                <i class="fa-solid fa-vials skill-icon" aria-hidden="true"></i>
+                <p>Supertest</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="education" class="education">
-          <h2>EDUCATION</h2>
+        <section id="projects" class="projects-section reveal">
+          <h2 class="section-title">PROJECTS</h2>
+
+          <div class="projects-container">
+            <div class="project-card">
+              <h3>Student Management System</h3>
+              <p>
+                Full-stack student management platform built during my
+                internship at Adnate IT Solutions — complete CRUD with search,
+                filtering, sorting, and pagination, JWT authentication with
+                role-based access control, and real-time presence tracking and
+                admin activity feeds over Socket.IO.
+              </p>
+              <!-- TODO: replace with real numbers once known, e.g. "Supports X students across Y branches with live dashboard analytics" -->
+              <p class="project-impact">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                Impact: supports [X] students across [Y] branches with live
+                dashboard analytics
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Redux Toolkit</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Socket.IO</span>
+                <span class="tech-tag">JWT / RBAC</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://student-management-system-drab-eta.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/Manasva504/Student-Management-System"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>AI-Powered Customer Support Chat Widget</h3>
+              <p>
+                Embeddable AI chat widget that answers customer questions
+                strictly from a business's own FAQ content, preventing
+                hallucinated responses. A FastAPI backend grounds every model
+                response in a configurable knowledge base and keeps API keys
+                server-side; the widget itself is dependency-free vanilla JS,
+                embeddable on any site with two script tags.
+              </p>
+              <!-- TODO: replace with a real, quantified result, e.g. "Answers N FAQ topics with zero hallucinated responses in testing" -->
+              <p class="project-impact">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                Impact: [quantified result — e.g. FAQ topics covered, response
+                time]
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">Vanilla JS</span>
+              </div>
+              <div class="project-links">
+                <!-- TODO: deploy the widget demo and replace "#" with the live URL -->
+                <a href="#" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/Manasva504/ai-chatbot-widget"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>React Weather App</h3>
+              <p>
+                Responsive weather application that fetches real-time
+                conditions from the OpenWeather API — search any city and view
+                temperature, humidity, wind speed, and current conditions.
+              </p>
+              <!-- TODO: replace with a real, quantified result, e.g. "Sub-second lookups for any of 200,000+ supported cities" -->
+              <p class="project-impact">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                Impact: [quantified result — e.g. lookup speed, cities covered]
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">OpenWeather API</span>
+              </div>
+              <div class="project-links">
+                <!-- TODO: the demo URL on the GitHub repo's About section currently 404s — redeploy on Vercel and paste the working URL here -->
+                <a href="#" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/Manasva504/react-weather-app"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>React Todo App</h3>
+              <p>
+                Productivity app with task tracking, per-task timers, and
+                localStorage persistence, so tasks survive page reloads without
+                any backend.
+              </p>
+              <!-- TODO: replace with a real, quantified result, e.g. "Tracks N tasks with zero data loss across sessions" -->
+              <p class="project-impact">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                Impact: [quantified result — e.g. tasks tracked, time saved]
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">localStorage</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://react-todo-app-seven-cyan.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="https://github.com/Manasva504/React-Todo-App"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="education reveal">
+          <h2 class="section-title">EDUCATION</h2>
 
           <div class="timeline">
             <div class="edu-card">
@@ -166,58 +446,83 @@
             <div class="edu-card">
               <div class="circle">🎓</div>
               <h3>B.Tech IT</h3>
-              <p>2024 - Present</p>
-              <p>CGPA: 7.5</p>
-              <p>Manipal Institute of Technology,Bengaluru.</p>
+              <p>2024 - 2028</p>
+              <p>CGPA: 7.535</p>
+              <p>Manipal Institute of Technology, Bengaluru.</p>
             </div>
           </div>
         </section>
 
-        <div id="contact" class="connectwme">
+        <div id="contact" class="connectwme reveal">
           <div class="contactme">
-            <a href="mailto:manasva541@gmail.com" target="_blank">
-              <i class="fa-solid fa-envelope"></i>
+            <a
+              href="mailto:manasva541@gmail.com"
+              target="_blank"
+              aria-label="Email manasva541@gmail.com"
+            >
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               manasva541@gmail.com
             </a>
             <br />
-            <a href="https://github.com/Manasva504" target="_blank">
-              <i class="fa-brands fa-github"></i>
+            <a
+              href="https://github.com/Manasva504"
+              target="_blank"
+              aria-label="GitHub profile"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
               https://github.com/Manasva504
             </a>
             <br />
-            <a href="callto:1234567891" target="_blank">
-              <i class="fa-solid fa-phone"></i>
-              +91 1234567892
-            </a>
-            <br />
-            <a href="#" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
+            <!-- TODO: link to a real maps URL or remove the link and keep this as plain text -->
+            <a href="#" target="_blank" aria-label="Location: Bengaluru">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               Bengaluru.
             </a>
             <br />
-            <a href="#" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
+            <!-- TODO: add your real LinkedIn profile URL -->
+            <a href="#" target="_blank" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
               linkedin
             </a>
           </div>
 
           <section class="contact">
-            <h2>CONTACT</h2>
-            <form>
+            <h2 class="section-title">CONTACT</h2>
+            <!--
+              Contact form powered by Web3Forms (https://web3forms.com) — free,
+              no backend needed, works on GitHub Pages.
+              TODO: sign up at web3forms.com, grab your Access Key, and paste
+              it into the hidden "access_key" input below.
+            -->
+            <form id="contactForm">
+              <input
+                type="hidden"
+                name="access_key"
+                value="a81cb561-a5c1-45b1-80b4-db80a7b840ea"
+              />
+              <input type="checkbox" name="botcheck" style="display: none" />
+
               <div class="row">
-                <input id="name" type="text" placeholder="Your Name" required />
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                />
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="Your Email"
                   required
                 />
               </div>
 
-              <input type="text" placeholder="Subject" required />
-              <textarea placeholder="Message" required></textarea>
+              <input id="subject" name="subject" type="text" placeholder="Subject" required />
+              <textarea id="message" name="message" placeholder="Message" required></textarea>
 
-              <button type="submit" onclick="validateForm()">
+              <button type="submit">
                 Send Message <i class="fa-regular fa-paper-plane"></i>
               </button>
             </form>
