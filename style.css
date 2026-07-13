@@ -787,6 +787,19 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Placeholder for a demo link that isn't live yet — looks inert instead of
+   behaving like a real (but broken) link */
+.project-links .link-pending {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 /* ---------- Education ---------- */
 
 .education {
