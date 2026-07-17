@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#021024" />
     <meta
       name="description"
       content="Portfolio of Manasva Dhaka, a B.Tech IT undergraduate building full-stack MERN and AI-powered projects."
@@ -148,11 +149,14 @@
               foundation.
             </p>
 
-            <!-- TODO: fill in what you're actually building/learning right now and keep this fresh — recruiters notice stale dates -->
-            <p class="current-focus">
-              <i class="fa-solid fa-wrench" aria-hidden="true"></i>
-              Currently building: [PROJECT] &nbsp;|&nbsp; Learning: [TOPIC]
-            </p>
+            <!-- TODO: once you know what you're actively building/learning, add it back as a
+                 visible line (keeps recruiters seeing current activity, not a stale placeholder):
+                 <p class="current-focus">
+                   <i class="fa-solid fa-wrench" aria-hidden="true"></i>
+                   Currently building: ... | Learning: ...
+                 </p>
+                 (.current-focus styles were removed from style.css along with this — re-add
+                 both together.) -->
           </div>
         </div>
 
@@ -276,12 +280,11 @@
                 role-based access control, and real-time presence tracking and
                 admin activity feeds over Socket.IO.
               </p>
-              <!-- TODO: replace with real numbers once known, e.g. "Supports X students across Y branches with live dashboard analytics" -->
-              <p class="project-impact">
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-                Impact: supports [X] students across [Y] branches with live
-                dashboard analytics
-              </p>
+              <!-- TODO: once you have a real number, add it back:
+                   <p class="project-impact">
+                     <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                     Impact: supports N students across M branches with live dashboard analytics
+                   </p> -->
               <div class="tech-tags">
                 <span class="tech-tag">React</span>
                 <span class="tech-tag">Redux Toolkit</span>
@@ -292,8 +295,13 @@
                 <span class="tech-tag">JWT / RBAC</span>
               </div>
               <div class="project-links">
-                <!-- TODO: the previous Vercel deployment (student-management-system-drab-eta.vercel.app) has been taken down (404 DEPLOYMENT_NOT_FOUND) — redeploy and paste the new URL here -->
-                <span class="link-pending" title="Live demo not currently deployed">
+                <!-- TODO: https://student-management-system-hgr7qf8su-manasva-s-projects.vercel.app
+                     is a real deployment but returns a Vercel SSO login wall (302 to
+                     vercel.com/sso-api) — "Deployment Protection" is on for this project, so
+                     the public can't view it. In Vercel: Project → Settings → Deployment
+                     Protection → disable it (or set Production only, if that's the alias you
+                     want public), then use that URL here. -->
+                <span class="link-pending" title="Live demo is behind a Vercel login wall — see source comment">
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   Live Demo
                 </span>
@@ -318,12 +326,11 @@
                 server-side; the widget itself is dependency-free vanilla JS,
                 embeddable on any site with two script tags.
               </p>
-              <!-- TODO: replace with a real, quantified result, e.g. "Answers N FAQ topics with zero hallucinated responses in testing" -->
-              <p class="project-impact">
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-                Impact: [quantified result — e.g. FAQ topics covered, response
-                time]
-              </p>
+              <!-- TODO: once you have a real number, add it back:
+                   <p class="project-impact">
+                     <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                     Impact: answers N FAQ topics with zero hallucinated responses in testing
+                   </p> -->
               <div class="tech-tags">
                 <span class="tech-tag">FastAPI</span>
                 <span class="tech-tag">Python</span>
@@ -331,11 +338,17 @@
                 <span class="tech-tag">Vanilla JS</span>
               </div>
               <div class="project-links">
-                <!-- TODO: deploy the widget demo, then swap this span for a real link -->
-                <span class="link-pending" title="Live demo not deployed yet">
+                <!-- The FastAPI backend has no "/" route, so the bare domain 404s by design —
+                   confirmed /health and /chat both respond, so linking to /docs (interactive
+                   Swagger UI) since it's the only path that renders anything in a browser -->
+                <a
+                  href="https://ai-chatbot-widget-85mi.onrender.com/docs"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   Live Demo
-                </span>
+                </a>
                 <a
                   href="https://github.com/Manasva504/ai-chatbot-widget"
                   target="_blank"
@@ -354,18 +367,23 @@
                 conditions from the OpenWeather API — search any city and view
                 temperature, humidity, wind speed, and current conditions.
               </p>
-              <!-- TODO: replace with a real, quantified result, e.g. "Sub-second lookups for any of 200,000+ supported cities" -->
-              <p class="project-impact">
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-                Impact: [quantified result — e.g. lookup speed, cities covered]
-              </p>
+              <!-- TODO: once you have a real number, add it back:
+                   <p class="project-impact">
+                     <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                     Impact: sub-second lookups for any of 200,000+ supported cities
+                   </p> -->
               <div class="tech-tags">
                 <span class="tech-tag">React</span>
                 <span class="tech-tag">Vite</span>
                 <span class="tech-tag">OpenWeather API</span>
               </div>
               <div class="project-links">
-                <!-- TODO: the demo URL on the GitHub repo's About section currently 404s — redeploy on Vercel, then swap this span for a real link -->
+                <!-- TODO: not deployed anywhere working. The GitHub repo's "website" field
+                     points to react-todo-app-fje9.vercel.app — that's a leftover mistake
+                     (wrong app, and that URL 404s anyway), ignore/clear it. Vercel CLI isn't
+                     authenticated in this environment so it couldn't be deployed here —
+                     run `vercel --prod` from the react-weather-app directory yourself, then
+                     swap this span for a real link. -->
                 <span class="link-pending" title="Live demo not currently deployed">
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   Live Demo
@@ -388,11 +406,11 @@
                 localStorage persistence, so tasks survive page reloads without
                 any backend.
               </p>
-              <!-- TODO: replace with a real, quantified result, e.g. "Tracks N tasks with zero data loss across sessions" -->
-              <p class="project-impact">
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-                Impact: [quantified result — e.g. tasks tracked, time saved]
-              </p>
+              <!-- TODO: once you have a real number, add it back:
+                   <p class="project-impact">
+                     <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                     Impact: tracks N tasks with zero data loss across sessions
+                   </p> -->
               <div class="tech-tags">
                 <span class="tech-tag">React</span>
                 <span class="tech-tag">Vite</span>

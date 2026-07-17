@@ -1,15 +1,17 @@
 :root {
-  /* Core palette — one navy, one accent, everything else is neutral */
+  /* Dark theme — one navy, one accent, everything else is neutral.
+     color-scheme: dark lets native form controls / scrollbars follow suit. */
+  color-scheme: dark;
   --color-navy-dark: #021024;
   --color-navy: #052659;
   --color-primary: #2563eb;
   --color-primary-light: #4d8cff;
-  --color-bg: #fdfdfd;
-  --color-bg-alt: #f4f7fc;
-  --color-card: #ffffff;
-  --color-border: #e2e8f0;
-  --color-text: #1e293b;
-  --color-text-muted: #64748b;
+  --color-bg: #050b18;
+  --color-bg-alt: #0a1830;
+  --color-card: #0f2245;
+  --color-border: #24334d;
+  --color-text: #e6ecf5;
+  --color-text-muted: #9aa8c4;
 
   /* Spacing rhythm */
   --section-padding: 90px;
@@ -18,9 +20,9 @@
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
-  --shadow-sm: 0 4px 16px rgba(5, 38, 89, 0.08);
-  --shadow-md: 0 12px 30px rgba(5, 38, 89, 0.14);
-  --shadow-lg: 0 22px 45px rgba(5, 38, 89, 0.2);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 22px 45px rgba(0, 0, 0, 0.55);
 
   --transition: 0.3s ease;
 }
@@ -250,9 +252,9 @@ nav a:hover {
   gap: 8px;
   margin-top: 16px;
   padding: 6px 14px;
-  background: #ecfdf3;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.35);
   border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
@@ -277,26 +279,6 @@ nav a:hover {
   100% {
     box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
   }
-}
-
-/* ---------- "Currently building / learning" line ---------- */
-
-.currently-line {
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-navy);
-  background: var(--color-bg-alt);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  border-left: 3px solid var(--color-primary-light);
-}
-
-.currently-line i {
-  color: var(--color-primary);
 }
 
 @media screen and (max-width: 768px) {
@@ -509,7 +491,7 @@ nav a:hover {
   font-size: 32px;
   margin-right: 22px;
   text-decoration: none;
-  color: var(--color-navy);
+  color: var(--color-text);
   transition: color var(--transition), transform var(--transition);
   display: inline-block;
 }
@@ -549,24 +531,16 @@ nav a:hover {
   border-radius: var(--radius-lg);
   float: left;
   margin: 20px;
-  object-fit: cover;
+  object-fit: contain;
+  /* The illustration itself has a light backdrop baked in — frame it in a
+     light mat rather than letting it float directly on the dark page */
+  background: #f4f7fc;
+  padding: 16px;
   box-shadow: 0 0 0 6px rgba(77, 140, 255, 0.15), var(--shadow-lg);
 }
 
 .about-text p {
   font-size: 1rem;
-}
-
-.current-focus {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  padding: 6px 14px;
-  background: rgba(77, 140, 255, 0.08);
-  border: 1px solid rgba(77, 140, 255, 0.25);
-  border-radius: 50px;
-  font-size: 14px;
 }
 
 /* ---------- Contact info block ---------- */
@@ -587,7 +561,7 @@ nav a:hover {
 .contactme a {
   font-size: 18px;
   margin: 10px;
-  color: var(--color-navy);
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 400;
   transition: color var(--transition), transform var(--transition);
@@ -720,7 +694,7 @@ nav a:hover {
 }
 
 .project-card h3 {
-  color: var(--color-navy);
+  color: var(--color-primary-light);
   margin-bottom: 10px;
 }
 
@@ -737,7 +711,7 @@ nav a:hover {
   min-height: 0;
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-navy);
+  color: var(--color-text);
   background: var(--color-bg-alt);
   padding: 8px 10px;
   border-radius: 8px;
@@ -916,12 +890,20 @@ textarea {
   width: 100%;
   padding: 12px;
   margin-top: 20px;
+  background: var(--color-card);
+  color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
 }
 
 input:focus,
@@ -973,7 +955,7 @@ button:disabled {
 
 .connectwme a {
   text-decoration: none;
-  color: var(--color-navy);
+  color: var(--color-text);
   margin: 15px;
   transition: all 0.3s ease;
 }
