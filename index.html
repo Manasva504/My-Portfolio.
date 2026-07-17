@@ -295,12 +295,14 @@
                 <span class="tech-tag">JWT / RBAC</span>
               </div>
               <div class="project-links">
-                <!-- TODO: https://student-management-system-hgr7qf8su-manasva-s-projects.vercel.app
-                     is a real deployment but returns a Vercel SSO login wall (302 to
-                     vercel.com/sso-api) — "Deployment Protection" is on for this project, so
-                     the public can't view it. In Vercel: Project → Settings → Deployment
-                     Protection → disable it (or set Production only, if that's the alias you
-                     want public), then use that URL here. -->
+                <!-- TODO: two different deployment URLs tried so far both hit a Vercel SSO
+                     login wall (302 to vercel.com/sso-api) —
+                     student-management-system-hgr7qf8su-manasva-s-projects.vercel.app and
+                     student-management-system-6xvg5kcrs-manasva-s-projects.vercel.app.
+                     This is a project-level "Deployment Protection" setting, so no deployment
+                     URL for this project will be publicly viewable until it's turned off. In
+                     Vercel: Project → Settings → Deployment Protection → disable it (or scope
+                     it to Preview only, if you want Production public), then use that URL here. -->
                 <span class="link-pending" title="Live demo is behind a Vercel login wall — see source comment">
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   Live Demo
@@ -338,11 +340,8 @@
                 <span class="tech-tag">Vanilla JS</span>
               </div>
               <div class="project-links">
-                <!-- The FastAPI backend has no "/" route, so the bare domain 404s by design —
-                   confirmed /health and /chat both respond, so linking to /docs (interactive
-                   Swagger UI) since it's the only path that renders anything in a browser -->
                 <a
-                  href="https://ai-chatbot-widget-85mi.onrender.com/docs"
+                  href="https://manasva504.github.io/ai-chatbot-widget/"
                   target="_blank"
                   rel="noopener"
                 >
@@ -378,16 +377,18 @@
                 <span class="tech-tag">OpenWeather API</span>
               </div>
               <div class="project-links">
-                <!-- TODO: not deployed anywhere working. The GitHub repo's "website" field
-                     points to react-todo-app-fje9.vercel.app — that's a leftover mistake
-                     (wrong app, and that URL 404s anyway), ignore/clear it. Vercel CLI isn't
-                     authenticated in this environment so it couldn't be deployed here —
-                     run `vercel --prod` from the react-weather-app directory yourself, then
-                     swap this span for a real link. -->
-                <span class="link-pending" title="Live demo not currently deployed">
+                <!-- TODO: the GitHub repo's "website" field still points to
+                     react-todo-app-fje9.vercel.app — that's a leftover mistake (wrong app,
+                     and that URL 404s anyway). Update it to react-weather-app-zucm.vercel.app
+                     or clear it. -->
+                <a
+                  href="https://react-weather-app-zucm.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                   Live Demo
-                </span>
+                </a>
                 <a
                   href="https://github.com/Manasva504/react-weather-app"
                   target="_blank"
