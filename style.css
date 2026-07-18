@@ -1,17 +1,19 @@
 :root {
-  /* Dark theme — one navy, one accent, everything else is neutral.
-     color-scheme: dark lets native form controls / scrollbars follow suit. */
-  color-scheme: dark;
+  /* Warm theme — vanilla/cream base, white cards, burnt-orange accent,
+     dark warm brown for text. color-scheme: light keeps native form
+     controls/scrollbars matched to the page. */
+  color-scheme: light;
   --color-navy-dark: #021024;
   --color-navy: #052659;
-  --color-primary: #2563eb;
-  --color-primary-light: #4d8cff;
-  --color-bg: #050b18;
-  --color-bg-alt: #0a1830;
-  --color-card: #0f2245;
-  --color-border: #24334d;
-  --color-text: #e6ecf5;
-  --color-text-muted: #9aa8c4;
+  --color-primary: #fc6c26;
+  --color-primary-light: #ff9166;
+  --color-primary-dark: #e05a1a;
+  --color-bg: #fff4d6;
+  --color-bg-alt: #faece7;
+  --color-card: #ffffff;
+  --color-border: #f0997b;
+  --color-text: #4a1b0c;
+  --color-text-muted: #712b13;
 
   /* Spacing rhythm */
   --section-padding: 90px;
@@ -20,9 +22,9 @@
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 22px 45px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 4px 16px rgba(74, 27, 12, 0.1);
+  --shadow-md: 0 12px 30px rgba(74, 27, 12, 0.16);
+  --shadow-lg: 0 22px 45px rgba(74, 27, 12, 0.22);
 
   --transition: 0.3s ease;
 }
@@ -54,9 +56,10 @@ main {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1350px;
   margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 50px);
   overflow: hidden;
 }
 
@@ -146,7 +149,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(to right, var(--color-navy-dark), var(--color-navy));
+  background: var(--color-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,13 +176,13 @@ header {
 }
 
 .logo {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: clamp(22px, 4vw, 28px);
   font-weight: 700;
 }
 
 nav a {
-  color: white;
+  color: var(--color-bg);
   text-decoration: none;
   margin-left: 30px;
   font-size: 18px;
@@ -188,7 +191,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--color-primary-light);
+  color: var(--color-primary);
 }
 
 .nav-toggle {
@@ -207,11 +210,11 @@ nav a:hover {
   padding: 70px 0;
   background: radial-gradient(
       circle at 12% 20%,
-      rgba(77, 140, 255, 0.16),
+      rgba(252, 108, 38, 0.14),
       transparent 42%
     ),
-    radial-gradient(circle at 88% 75%, rgba(37, 99, 235, 0.14), transparent 45%),
-    radial-gradient(circle at 50% 100%, rgba(5, 38, 89, 0.06), transparent 50%);
+    radial-gradient(circle at 88% 75%, rgba(240, 153, 123, 0.16), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(74, 27, 12, 0.05), transparent 50%);
 }
 
 @keyframes fadeInUp {
@@ -252,9 +255,9 @@ nav a:hover {
   gap: 8px;
   margin-top: 16px;
   padding: 6px 14px;
-  background: rgba(34, 197, 94, 0.12);
-  color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: #faece7;
+  color: #712b13;
+  border: 1px solid #f0997b;
   border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
@@ -264,20 +267,20 @@ nav a:hover {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 rgba(34, 197, 94, 0.5);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 rgba(252, 108, 38, 0.5);
   animation: statusPulse 2s infinite;
 }
 
 @keyframes statusPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 0 0 rgba(252, 108, 38, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 6px rgba(252, 108, 38, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 0 rgba(252, 108, 38, 0);
   }
 }
 
@@ -293,7 +296,6 @@ nav a:hover {
     width: 200px;
     height: auto;
     margin: 0;
-    float: none;
   }
 }
 
@@ -302,16 +304,15 @@ nav a:hover {
   height: 300px;
   width: 230px;
   border-radius: var(--radius-lg);
-  float: right;
   margin: 20px;
   object-fit: cover;
-  box-shadow: 0 0 0 6px rgba(77, 140, 255, 0.15), var(--shadow-lg);
+  box-shadow: 0 0 0 6px rgba(252, 108, 38, 0.15), var(--shadow-lg);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .uparwalaimg:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 0 8px rgba(77, 140, 255, 0.22), var(--shadow-lg);
+  box-shadow: 0 0 0 8px rgba(252, 108, 38, 0.22), var(--shadow-lg);
 }
 
 .buttons {
@@ -319,9 +320,8 @@ nav a:hover {
 }
 
 .btn1 {
-  position: relative;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
   padding: 14px 30px;
@@ -336,70 +336,7 @@ nav a:hover {
   box-shadow: var(--shadow-md);
 }
 
-.btn1::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-/*glow*/
-.btn1::before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 50px;
-  opacity: 0;
-}
-
-.btn1:hover::before {
-  opacity: 1;
-}
-
-.btn1:active::after {
-  background: transparent;
-}
-
-.btn1:active {
-  color: #000;
-  font-weight: bold;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
 .btn2 {
-  position: relative;
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
   font-weight: 600;
@@ -415,56 +352,6 @@ nav a:hover {
 .btn2:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-sm);
-}
-
-.btn2::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-/*glow*/
-.btn2::before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 50px;
-  opacity: 0;
-}
-
-.btn2:hover::before {
-  opacity: 1;
-}
-
-.btn2:active::after {
-  background: transparent;
-}
-
-.btn2:active {
-  color: #000;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 480px) {
@@ -520,7 +407,6 @@ nav a:hover {
   .aboutmeimg {
     width: 200px;
     height: auto;
-    float: none;
     margin: 0;
   }
 }
@@ -529,14 +415,9 @@ nav a:hover {
   max-width: 100%;
   height: 300px;
   border-radius: var(--radius-lg);
-  float: left;
   margin: 20px;
-  object-fit: contain;
-  /* The illustration itself has a light backdrop baked in — frame it in a
-     light mat rather than letting it float directly on the dark page */
-  background: #f4f7fc;
-  padding: 16px;
-  box-shadow: 0 0 0 6px rgba(77, 140, 255, 0.15), var(--shadow-lg);
+  object-fit: cover;
+  box-shadow: 0 0 0 6px rgba(252, 108, 38, 0.15), var(--shadow-lg);
 }
 
 .about-text p {
@@ -694,7 +575,7 @@ nav a:hover {
 }
 
 .project-card h3 {
-  color: var(--color-primary-light);
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
@@ -757,7 +638,7 @@ nav a:hover {
 }
 
 .project-links a:hover {
-  color: var(--color-navy);
+  color: var(--color-text);
   text-decoration: underline;
 }
 
@@ -910,7 +791,7 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--color-primary-light);
-  box-shadow: 0 0 0 3px rgba(77, 140, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(252, 108, 38, 0.15);
 }
 
 textarea {
@@ -922,7 +803,7 @@ button {
   margin-top: 20px;
   padding: 14px 30px;
   background: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   font-weight: 600;
   border: none;
   border-radius: 50px;
@@ -934,7 +815,7 @@ button {
 }
 
 button:hover {
-  background: var(--color-navy);
+  background: var(--color-primary-dark);
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
@@ -992,9 +873,9 @@ button:disabled {
 /* ---------- Footer ---------- */
 
 footer {
-  background-color: var(--color-navy);
+  background-color: var(--color-text);
   text-align: center;
-  color: white;
+  color: var(--color-bg);
   width: 100%;
   padding: 24px 20px;
   font-weight: 300;
